@@ -2,7 +2,7 @@ from Brain_tumor_classifier.constants import *
 from Brain_tumor_classifier.utils.common import read_yaml, create_directories
 import os
 from pathlib import Path
-from Brain_tumor_classifier.entity.config_entity import (DataIngestionConfig)
+from Brain_tumor_classifier.entity.config_entity import (DataIngestionConfig, DataTransformationConfig)
 
 
 
@@ -32,3 +32,21 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+        params = self.params
+
+        create_directories([config.root_dir])
+
+        return DataTransformationConfig(
+            root_dir=config.root_dir,
+            train_data_dir=config.train_data_dir,
+            test_data_dir=config.test_data_dir,
+            img_height=params.IMAGE_SIZE,
+            img_width=params.IMAGE_SIZE,
+            batch_size=params.BATCH_SIZE,
+            aug_params=params.AUGMENTATION
+        )

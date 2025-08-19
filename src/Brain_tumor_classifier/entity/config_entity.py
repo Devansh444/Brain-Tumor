@@ -9,3 +9,12 @@ class DataIngestionConfig:
     unzip_dir: Path 
 
     
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    train_data_dir: Path
+    test_data_dir: Path
+    img_height: int
+    img_width: int
+    batch_size: int
+    aug_params: dict   
