@@ -1,7 +1,11 @@
 
-
-IMAGE_SIZE: 224
+IMAGE_SIZE: [224, 224, 3]
 BATCH_SIZE: 32
+INCLUDE_TOP: False
+EPOCHS: 10
+CLASSES: 2
+WEIGHTS: imagenet
+LEARNING_RATE: 0.001
 AUGMENTATION:
   rotation_range: 20
   width_shift_range: 0.2
@@ -9,4 +13,3 @@ AUGMENTATION:
   shear_range: 0.2
   zoom_range: 0.2
   horizontal_flip: True
-
