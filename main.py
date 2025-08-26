@@ -1,5 +1,6 @@
-from cnnClassifier import logger
-from cnnClassifier.pipeline.stage_01_Data_ingestion import DataIngestionTrainingPipeline
+from Brain_tumor_classifier import logger
+from Brain_tumor_classifier.pipeline.Stage_01_Data_ingestion import DataIngestionTrainingPipeline
+from Brain_tumor_classifier.pipeline.Stage_02_Data_transformation import DataTransformationTrainingPipeline
 
 
 
@@ -13,3 +14,15 @@ except Exception as e:
         logger.exception(e)
         raise e
 
+
+STAGE_NAME = "Data Transformation Stage"
+
+if __name__ == '__main__':
+    try:
+        logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+        obj = DataTransformationTrainingPipeline()
+        train_gen, test_gen = obj.main()
+        logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+    except Exception as e:
+        logger.exception(e)
+        raise e

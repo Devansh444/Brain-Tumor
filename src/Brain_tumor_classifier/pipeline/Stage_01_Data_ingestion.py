@@ -1,4 +1,4 @@
-from Brain_tumor_classifier import ConfigurationManager
+from Brain_tumor_classifier.config.configuration import ConfigurationManager
 from Brain_tumor_classifier.components.data_ingestion import DataIngestion
 from Brain_tumor_classifier import logger
 
