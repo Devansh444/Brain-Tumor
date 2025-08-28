@@ -55,4 +55,10 @@ class TrainingConfig:
     params_augmentation: Dict         # added (dict from params.yaml)
 
 
-    
+@dataclass(frozen=True)
+class EvaluationConfig:
+    path_of_model: Path
+    test_data: Path
+    all_params: dict
+    params_image_size: list
+    params_batch_size: int  
