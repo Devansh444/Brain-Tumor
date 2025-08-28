@@ -1,5 +1,5 @@
 from Brain_tumor_classifier.config.configuration import ConfigurationManager
-from Brain_tumor_classifier.components.evaluation import Evaluation
+from Brain_tumor_classifier.components.model_evaluation import model_Evaluation
 from Brain_tumor_classifier import logger
 
 STAGE_NAME = "Evaluation stage"
@@ -14,7 +14,7 @@ class EvaluationPipeline:
         # Get evaluation config with proper test dataset path
         val_config = config.get_validation_config()
         # Initialize evaluation
-        evaluation = Evaluation(val_config)
+        evaluation = model_Evaluation(val_config)
         # Run evaluation
         evaluation.evaluation()
         # Save evaluation scores

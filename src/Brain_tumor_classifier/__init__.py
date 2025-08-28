@@ -23,4 +23,4 @@ logging.basicConfig(
 )
 
 # 4. Logger object banate hain jisko project me import karke use kar sakte ho
-logger = logging.getLogger("brain_tumor_classifier")
+logger = logging.getLogger("Brain_tumor_classifier")

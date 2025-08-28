@@ -3,7 +3,7 @@ from Brain_tumor_classifier.utils.common import read_yaml, create_directories
 import os
 from pathlib import Path
 from Brain_tumor_classifier.entity.config_entity import (DataIngestionConfig, DataTransformationConfig, PrepareBaseModelConfig,
-                                                         PrepareCallbacksConfig)
+                                                         PrepareCallbacksConfig, TrainingConfig, EvaluationConfig)
 
 
 

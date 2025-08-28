@@ -1,9 +1,14 @@
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
+
+
 from Brain_tumor_classifier import logger
 from Brain_tumor_classifier.pipeline.Stage_01_Data_ingestion import DataIngestionTrainingPipeline
 from Brain_tumor_classifier.pipeline.Stage_02_Data_transformation import DataTransformationTrainingPipeline
 from Brain_tumor_classifier.pipeline.Stage_03_prepare_base_model import PrepareBaseModelTrainingPipeline
 from Brain_tumor_classifier.pipeline.Stage_04_training import ModelTrainingPipeline
-from Brain_tumor_classifier.pipeline.Stage_05_evaluation import EvaluationPipeline
+from Brain_tumor_classifier.pipeline.Stage_05_model_evaluation import EvaluationPipeline
 
 
 STAGE_NAME = "Data Ingestion stage"

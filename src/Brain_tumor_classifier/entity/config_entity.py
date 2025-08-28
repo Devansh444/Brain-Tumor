@@ -52,7 +52,7 @@ class TrainingConfig:
     params_is_augmentation: bool
     params_image_size: list
     params_learning_rate: float       # added
-    params_augmentation: Dict         # added (dict from params.yaml)
+    params_augmentation: dict         # added (dict from params.yaml)
 
 
 @dataclass(frozen=True)

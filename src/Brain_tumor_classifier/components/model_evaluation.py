@@ -4,7 +4,7 @@ from Brain_tumor_classifier.entity.config_entity import EvaluationConfig
 from Brain_tumor_classifier.utils.common import save_json
 
 
-class Evaluation:
+class model_Evaluation:
     def __init__(self, config: EvaluationConfig):
         self.config = config
 
