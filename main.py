@@ -2,6 +2,7 @@ from Brain_tumor_classifier import logger
 from Brain_tumor_classifier.pipeline.Stage_01_Data_ingestion import DataIngestionTrainingPipeline
 from Brain_tumor_classifier.pipeline.Stage_02_Data_transformation import DataTransformationTrainingPipeline
 from Brain_tumor_classifier.pipeline.Stage_03_prepare_base_model import PrepareBaseModelTrainingPipeline
+from Brain_tumor_classifier.pipeline.Stage_04_training import ModelTrainingPipeline
 
 
 STAGE_NAME = "Data Ingestion stage"
@@ -39,3 +40,17 @@ try:
 except Exception as e:
         logger.exception(e)
         raise e
+
+
+
+
+STAGE_NAME = "Training"
+
+try:
+    logger.info("*******************")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    ModelTrainingPipeline().main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
